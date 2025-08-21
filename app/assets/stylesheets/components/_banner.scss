@@ -1,0 +1,17 @@
+.banner {
+    height: 300px;
+    background-image: linear-gradient(rgba(138, 138, 138, 0.129),rgba(127, 126, 126, 0.05)), asset-url("undraw_horror-movie_9020.svg");
+    background-size: auto 105%;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding: 150px 0;
+}
+
+.banner h1 {
+    margin: 0;
+    color: #515065;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}

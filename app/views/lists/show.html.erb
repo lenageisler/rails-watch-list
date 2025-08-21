@@ -1,1 +1,7 @@
+<%= render "shared/navbar" %>
+
 <h1><%= @list.name %></h1>
+
+<% @list.bookmarks do |bm| %>
+    <h5><%= bm.movie.title %></h5>
+<% end %>
