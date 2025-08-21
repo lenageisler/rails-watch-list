@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require "faker"
+
+puts "seeding db"
+10.times do
+  Movie.create!(
+    title: Faker::Movie.title,
+    overview: Faker::Movie.quote,
+    poster_url: Faker::LoremFlickr.image,
+    rating: rand(0.0..10.0).round(1)
+  )
+end
+puts "done"
