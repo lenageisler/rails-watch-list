@@ -10,12 +10,22 @@
     <div class="cards">
 
         <% @list.bookmarks.each do |bm| %>
-            <div class="card-product">
+            <div class="card-trip">
                 <img src="<%= bm.movie.poster_url %>" />
-                <div class="card-product-infos">
-                    <h2><%= bm.movie.title %></h2>
-                    <p><%= bm.movie.overview %></p>
-                    <%= link_to "Delete", bookmark_path(bm), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                <div class="card-trip-infos">
+                    <div>
+                        <div class="card-trip-info-top">
+                            <h2><%= bm.movie.title %></h2>
+                            <h3><%= bm.movie.rating %></h3>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p><%= bm.movie.overview %></p>
+                        <div class="card-trip-info-bottom">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <h4><%= bm.comment %></h4>
+                        </div>
+                    </div>
+                    <%= link_to "Delete", bookmark_path(bm), class: "btn-ghost-sm", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
                 </div>
             </div>
         <% end %>
