@@ -2,6 +2,6 @@
 
 <h1><%= @list.name %></h1>
 
-<% @list.bookmarks do |bm| %>
-    <h5><%= bm.movie.title %></h5>
+<% @list.movies.each do |movie| %>
+    <h5><%= movie.title %></h5>
 <% end %>

@@ -9,10 +9,14 @@
 
 <h1>Movie Lists</h1>
 
-<% @lists.each do |list| %>
-    <h5><%= link_to list.name, list_path(list) %></h5>
-<% end %>
+<% colors = ["#F86D70", "#515065", "#F56E0A", "#A0616A", "#2E2E41" ] %>
 
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
+<div class="cards">
+
+    <% @lists.each do |list| %>
+        <div class="card-category" style="background-color:<%= colors.sample %>;">
+            <%= link_to list.name, list_path(list) %>
+        </div>
+    <% end %>
+
 </div>
