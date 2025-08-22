@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "/lists", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "undraw_home-cinema_jdm1.svg" %>
     <% end %>
 
@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "My lists", "/lists", class: "nav-link" %>
+            <%= link_to "My lists", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "New list", "/lists/new", class: "nav-link" %>
