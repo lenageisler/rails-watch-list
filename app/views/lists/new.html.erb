@@ -2,8 +2,8 @@
 <div class="content-box">
     <h1>Create a new list</h1>
 
-    <%= simple_form_for(@list) do |f| %>
+    <%= simple_form_for(@list, html: { class: "form" }) do |f| %>
     <%= f.input :name %>
-    <%= f.submit %>
+    <%= f.submit "Create List", class: "btn-ghost" %>
     <% end %>
 </div>

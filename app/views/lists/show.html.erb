@@ -1,16 +1,32 @@
 <%= render "shared/navbar" %>
 
-<h1><%= @list.name %></h1>
+<div class="banner-list">
+    <h1><%= @list.name %></h1>
+</div>
 
-<% @list.bookmarks.each do |bm| %>
-    <h5><%= bm.movie.title %></h5>
-    <%= link_to "Delete", bookmark_path(bm), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-<% end %>
+<div class="content-box">
+    <h1>Movies on this list</h1>
 
-<h4>Add a movie to the list</h4>
+    <div class="cards">
 
-<%= simple_form_for [@list, @bookmark] do |f| %>
-    <%= f.input :comment %>
-    <%= f.association :movie %>
-    <%= f.submit %>
-<% end %>
+        <% @list.bookmarks.each do |bm| %>
+            <div class="card-product">
+                <img src="<%= bm.movie.poster_url %>" />
+                <div class="card-product-infos">
+                    <h2><%= bm.movie.title %></h2>
+                    <p><%= bm.movie.overview %></p>
+                    <%= link_to "Delete", bookmark_path(bm), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                </div>
+            </div>
+        <% end %>
+
+    </div>
+
+    <h1>Add a movie to the list</h1>
+
+    <%= simple_form_for [@list, @bookmark], html: { class: "form" } do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie %>
+        <%= f.submit "Add movie", class: "btn-ghost" %>
+    <% end %>
+</div>
