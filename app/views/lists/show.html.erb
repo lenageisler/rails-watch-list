@@ -5,3 +5,11 @@
 <% @list.movies.each do |movie| %>
     <h5><%= movie.title %></h5>
 <% end %>
+
+<h4>Add a movie to the list</h4>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment %>
+    <%= f.association :movie %>
+    <%= f.submit %>
+<% end %>
