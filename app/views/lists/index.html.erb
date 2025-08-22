@@ -7,16 +7,20 @@
     </div>
 </div>
 
-<h1>Movie Lists</h1>
+<div class="content-box">
+    <h1>My Lists</h1>
 
-<% colors = ["#F86D70", "#515065", "#F56E0A", "#A0616A", "#2E2E41" ] %>
+    <% colors = ["#F86D70", "#515065", "#F56E0A", "#A0616A", "#2E2E41" ] %>
 
-<div class="cards">
+    <div class="cards">
 
-    <% @lists.each do |list| %>
-        <div class="card-category" style="background-color:<%= colors.sample %>;">
-            <%= link_to list.name, list_path(list) %>
-        </div>
-    <% end %>
+        <% @lists.each do |list| %>
+            <%= link_to list_path(list), class: "list_link" do %>
+                <div class="card-category" style="background-color:<%= colors.sample %>;">
+                    <%= list.name %>
+                </div>
+            <% end %>
+        <% end %>
 
+    </div>
 </div>
